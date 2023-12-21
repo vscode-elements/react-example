@@ -1,0 +1,24 @@
+.Demo {
+  width: 400px;
+}
+
+.Demo .tabs {
+  --tabs-header-height: 35px;
+
+  height: 200px;
+  width: 400px;
+}
+
+.Demo .tabs vscode-tab-panel {
+  height: calc(100% - var(--tabs-header-height));
+}
+
+.Demo .buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.Demo .buttons vscode-button {
+  margin-left: 2px;
+  margin-right: 2px;
+}

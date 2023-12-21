@@ -1,13 +1,23 @@
-import {DOMAttributes} from 'react';
-// Import the custom element definition class 
-import {VscodeButton} from '@bendera/vscode-webview-elements/dist/vscode-button/vscode-button.js';
+import { DOMAttributes, MutableRefObject } from "react";
+// Import custom element definition classes
+import {
+  VscodeButton,
+  VscodeTabHeader,
+  VscodeTabPanel,
+  VscodeTabs,
+} from "@vscode-elements/elements";
 
-type CustomElement<T> = Partial<T & DOMAttributes<T> & {children: any}>;
+type CustomElement<T> = Partial<
+  T & DOMAttributes<T> & { children: any } & MutableRefObject
+>;
 
 declare global {
   namespace React.JSX {
     interface IntrinsicElements {
-      ['vscode-button']: CustomElement<VscodeButton>;
+      ["vscode-button"]: CustomElement<VscodeButton>;
+      ["vscode-tabs"]: CustomElement<VscodeTabs>;
+      ["vscode-tab-header"]: CustomElement<VscodeTabHeader>;
+      ["vscode-tab-panel"]: CustomElement<VscodeTabPanel>;
     }
   }
 }
